@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Child List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Child List</h2>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>Child ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Parent Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="child : ${children}">
+            <td th:text="${child.id}"></td>
+            <td th:text="${child.name}"></td>
+            <td th:text="${child.age}"></td>
+            <td th:text="${child.parent.name}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
